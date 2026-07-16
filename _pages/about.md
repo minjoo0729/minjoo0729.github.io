@@ -2,7 +2,7 @@
 layout: about
 title: MAIN
 permalink: /
-subtitle: Academic Website of Minjoo Kim, M.S. Student at KAIST School of Computing CASYS lab
+subtitle: First-Year M.S. Student
 
 profile:
   align: right
