@@ -41,11 +41,3 @@ I am a first-year M.S. student in School of Computing at KAIST, Republic of Kore
 ### Education
 - **M.S. in School of Computing**, KAIST, Mar. 2026 ~ Current
 - **B.S. in School of Computing**, KAIST, Mar. 2021 ~ Feb. 2026
-
-
-<style>
-  .news h2, 
-  .news h2 a {
-    text-transform: capitalize !important;
-  }
-</style>
