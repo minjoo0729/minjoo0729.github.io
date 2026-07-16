@@ -7,7 +7,7 @@ first_name: Minjoo
 middle_name:
 last_name: Kim
 contact_note: >
-  You can even add a little note about which of these is the best way to reach you.
+  Please feel free to contact me via email
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
   First-Year M.S. Student in School of Computing at KAIST
 footer_text: >
@@ -85,7 +85,7 @@ al_folio:
 
 navbar_fixed: true
 footer_fixed: true
-search_enabled: true
+search_enabled: false
 socials_in_search: true
 posts_in_search: true
 bib_search: true
