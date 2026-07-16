@@ -7,7 +7,7 @@ subtitle: First-Year M.S. Student
 profile:
   align: right
   image: prof_pic.jpg
-  image_circular: false # crops the image to make it circular
+  image_circular: true # crops the image to make it circular
   more_info: >
     <p>KAIST E3-5 #408</p>
     <p>291 Daehak-ro, 34141</p>
