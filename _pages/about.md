@@ -32,8 +32,11 @@ latest_posts:
 I am a first-year M.S. student in School of Computing at KAIST, Republic of Korea, advised by [Prof. Youngjin Kwon](https://sites.google.com/view/yjkwon/home) of the [Computer Architecture and Systems Lab (CASYS)](https://casyslab.kaist.ac.kr/). Previously, I received my Bachelor's degree in February, 2026 from KAIST.
 
 ### Research Interests
-- **Operating Systems**
-- **Computer Architecture**
+* **Operating Systems**
+  * File & Storage Systems
+  * Kernel-level Optimization
+* **Computer Architecture**
+  * Unified Memory Architectures
 
 ### Education
 - **M.S. in School of Computing**, KAIST, Mar. 2026 ~ Current
