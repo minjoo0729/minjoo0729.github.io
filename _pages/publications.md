@@ -2,7 +2,7 @@
 layout: page
 permalink: /publications/
 title: Publications
-description: Publications by categories in reversed chronological order.
+description: Last Updated July, 2026
 nav: true
 nav_order: 2
 ---
@@ -11,12 +11,12 @@ nav_order: 2
 
 <!-- Bibsearch Feature -->
 
-{% include bib_search.liquid %}
+<!-- {% include bib_search.liquid %} -->
 
-<div class="publications">
-
-### Journal & Conference Papers
 **Stay tuned! Publications will be updated here soon.**
 
-</div>
-<!-- {% bibliography %} -->
+<!-- <div class="publications">
+
+{% bibliography %}
+
+</div> -->

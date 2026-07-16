@@ -1,17 +1,17 @@
 ---
 layout: about
-title: about
+title: MAIN
 permalink: /
 subtitle: First-Year M.S. Student
 
 profile:
-  align: right
+  align: top
   image: prof_pic.jpg
   image_circular: true # crops the image to make it circular
-  more_info: >
-    <p>KAIST E3-5 #408</p>
-    <p>291 Daehak-ro, 34141</p>
-    <p>Daejeon, Republic of Korea</p>
+  # more_info: >
+  #   <p>KAIST E3-5 #408</p>
+  #   <p>291 Daehak-ro, 34141</p>
+  #   <p>Daejeon, Republic of Korea</p>
 
 selected_papers: false # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
