@@ -23,6 +23,10 @@ import profilePic from "../assets/images/prof_pic.jpg";
           loading="eager"
           style="width:100%;height:auto;aspect-ratio:1/1;object-fit:cover;"
         />
+        <div class="social">
+          <SocialIcons />
+          <p class="contact-note">{site.contactNote}</p>
+        </div>
       </div>
 
       <div class="clearfix">
@@ -60,11 +64,18 @@ import profilePic from "../assets/images/prof_pic.jpg";
 
       <h2><a href="/news/">News</a></h2>
       <NewsList limit={5} scrollable={true} />
-
-      <div class="social">
-        <SocialIcons />
-        <p class="contact-note">{site.contactNote}</p>
-      </div>
     </article>
   </div>
 </BaseLayout>
+
+<style>
+  .clearfix a,
+  h2 a {
+    color: var(--global-theme-color);
+  }
+
+  .clearfix a:hover,
+  h2 a:hover {
+    color: var(--global-hover-color);
+  }
+</style>
