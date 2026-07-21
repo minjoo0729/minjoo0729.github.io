@@ -266,15 +266,12 @@ Run the test yourself: [Google Lighthouse PageSpeed Insights](https://pagespeed.
   - [Features](#features)
     - [Light/Dark Mode](#lightdark-mode)
     - [CV](#cv)
-    - [People](#people)
     - [Publications](#publications)
     - [Collections](#collections)
     - [Layouts](#layouts)
-      - [The iconic style of Distill](#the-iconic-style-of-distill)
       - [Full support for math &amp; code](#full-support-for-math--code)
       - [Photos, Audio, Video and more](#photos-audio-video-and-more)
     - [Other features](#other-features)
-      - [GitHub's repositories and user stats](#githubs-repositories-and-user-stats)
       - [Theming](#theming)
       - [Social media previews](#social-media-previews)
       - [Atom (RSS-like) Feed](#atom-rss-like-feed)
@@ -322,8 +319,6 @@ For customization details please refer to [docs/CUSTOMIZE.md](docs/CUSTOMIZE.md)
 `al-folio` is a thin starter in `v1.x`. Runtime features are plugin-owned and published as Ruby gems.
 
 - Ownership boundaries: [docs/BOUNDARIES.md](docs/BOUNDARIES.md)
-- Plugin catalog metadata: [`_data/featured_plugins.yml`](_data/featured_plugins.yml)
-- Plugin catalog page source: [`_pages/plugins.md`](_pages/plugins.md)
 
 Naming convention:
 
@@ -336,7 +331,6 @@ The bundled v1 plugin repos are:
 
 - [`al-folio-core`](https://github.com/al-org-dev/al-folio-core): shared layouts, includes, style/runtime primitives, and upgrade contracts
 - [`al-folio-cv`](https://github.com/al-org-dev/al-folio-cv): CV rendering
-- [`al-folio-distill`](https://github.com/al-org-dev/al-folio-distill): Distill layouts and runtime assets
 - [`al-folio-bootstrap-compat`](https://github.com/al-org-dev/al-folio-bootstrap-compat): temporary Bootstrap compatibility runtime
 - [`al-folio-upgrade`](https://github.com/al-org-dev/al-folio-upgrade): v1 upgrade audit/report/codemods
 - [`al-icons`](https://github.com/al-org-dev/al-icons): icon loading
@@ -385,7 +379,6 @@ Comprehensive guides for all aspects of your al-folio website:
 - **[FAQ](docs/FAQ.md)** – Frequently asked questions and solutions
 - **[Analytics](docs/ANALYTICS.md)** – Add website analytics and visitor tracking
 - **[SEO Guide](docs/SEO.md)** – Optimize for search engines and improve discoverability
-- **[Plugin Catalog](_pages/plugins.md)** – Featured and bundled plugin metadata
 
 ## Features
 
@@ -410,14 +403,6 @@ For setup and customization details, see [Modifying the CV information](docs/CUS
 
 ---
 
-### People
-
-You can create a people page if you want to feature more than one person. Each person can have its own short bio, profile picture, and you can also set if every person will appear at the same or opposite sides.
-
-[![People Preview](readme_preview/people.png)](https://alshedivat.github.io/al-folio/people/)
-
----
-
 ### Publications
 
 Your publications page is generated automatically from your BibTeX bibliography. You can customize publication display, add extra information like PDFs, and control sorting behavior.
@@ -430,7 +415,7 @@ For setup, BibTeX field documentation, and customization options, see [Adding a 
 
 ### Collections
 
-This Jekyll theme implements `collections` to organize content into categories. The theme comes with default collections for `news`, `projects`, `books`, and `teachings`. You can easily create your own collections for apps, stories, courses, or any other creative work.
+This Jekyll theme implements `collections` to organize content into categories. The theme comes with default collections for `news`, `projects`, and `teachings`. You can easily create your own collections for apps, stories, courses, or any other creative work.
 
 [![Projects Preview](readme_preview/projects.png)](https://alshedivat.github.io/al-folio/projects/)
 
@@ -441,14 +426,6 @@ For detailed instructions on creating and customizing collections, see [Adding C
 ### Layouts
 
 **al-folio** comes with stylish layouts for pages and blog posts.
-
-#### The iconic style of Distill
-
-The theme allows you to create blog posts in the [distill.pub](https://distill.pub/) style:
-
-[![Distill Preview](readme_preview/distill.png)](https://alshedivat.github.io/al-folio/blog/2021/distill/)
-
-For more details on how to create distill-styled posts using `<d-*>` tags, please refer to [the example](https://alshedivat.github.io/al-folio/blog/2021/distill/).
 
 #### Full support for math & code
 
@@ -472,16 +449,6 @@ Photo formatting is made simple using Tailwind-first responsive layout utilities
 ---
 
 ### Other features
-
-#### GitHub's repositories and user stats
-
-**al-folio** displays GitHub repositories and user stats on the `/repositories/` page using [github-readme-stats](https://github.com/anuraghazra/github-readme-stats) and [github-profile-trophy](https://github.com/ryo-ma/github-profile-trophy).
-
-[![Repositories Preview](readme_preview/repositories.png)](https://alshedivat.github.io/al-folio/repositories/)
-
-To configure which repositories and GitHub profiles to display, see [Modifying the user and repository information](docs/CUSTOMIZE.md#modifying-the-user-and-repository-information) in [docs/CUSTOMIZE.md](docs/CUSTOMIZE.md).
-
----
 
 #### Theming
 
