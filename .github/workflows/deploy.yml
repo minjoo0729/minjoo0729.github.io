@@ -1,9 +1,7 @@
 name: Deploy Astro site
 
-# Builds the Astro site under astro-site/ and deploys it to GitHub Pages via
-# the standard Actions flow (upload-pages-artifact + deploy-pages).
-# Scoped to astro-site/** so it does not fire on unrelated changes elsewhere
-# in the repo (the repo root still has legacy Jekyll files during migration).
+# Builds the Astro site (repo root) and deploys it to GitHub Pages via the
+# standard Actions flow (upload-pages-artifact + deploy-pages).
 #
 # NOTE: In the GitHub repo, go to Settings → Pages and set Source to
 # "GitHub Actions" (it may currently be "Deploy from a branch").
@@ -12,9 +10,6 @@ on:
   push:
     branches:
       - main
-    paths:
-      - "astro-site/**"
-      - ".github/workflows/deploy.yml"
   workflow_dispatch:
 
 permissions:
@@ -29,9 +24,6 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: astro-site
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -41,7 +33,6 @@ jobs:
         with:
           node-version: "22"
           cache: "npm"
-          cache-dependency-path: astro-site/package-lock.json
 
       - name: Install dependencies
         run: npm ci
@@ -52,7 +43,7 @@ jobs:
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: astro-site/dist
+          path: dist
 
   deploy:
     needs: build

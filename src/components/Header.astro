@@ -1,0 +1,61 @@
+---
+import site from "../data/site.json";
+
+const navItems = [
+  { href: "/blog/", label: "BLOG" },
+  { href: "/publications/", label: "PUBLICATIONS" },
+  { href: "/projects/", label: "PROJECTS" },
+  { href: "/news/", label: "NEWS" },
+  { href: "/cv/", label: "CV" },
+  { href: "/teaching/", label: "TEACHING" },
+];
+
+const currentPath = Astro.url.pathname;
+---
+
+<header class="navbar">
+  <div class="navbar-inner">
+    <a href="/" class="navbar-brand">{site.title}</a>
+    <nav>
+      <ul class="navbar-links">
+        {
+          navItems.map((item) => (
+            <li>
+              <a href={item.href} aria-current={currentPath.startsWith(item.href) ? "page" : undefined}>
+                {item.label}
+              </a>
+            </li>
+          ))
+        }
+        <li>
+          <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle dark mode">
+            <span id="theme-toggle-icon">🌙</span>
+          </button>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<script>
+  const STORAGE_KEY = "theme";
+  const root = document.documentElement;
+  const icon = document.getElementById("theme-toggle-icon");
+
+  function applyIcon(theme: string) {
+    if (icon) icon.textContent = theme === "dark" ? "☀️" : "🌙";
+  }
+
+  function currentTheme(): string {
+    return root.getAttribute("data-theme") || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+  }
+
+  applyIcon(currentTheme());
+
+  document.getElementById("theme-toggle")?.addEventListener("click", () => {
+    const next = currentTheme() === "dark" ? "light" : "dark";
+    root.setAttribute("data-theme", next);
+    localStorage.setItem(STORAGE_KEY, next);
+    applyIcon(next);
+  });
+</script>
