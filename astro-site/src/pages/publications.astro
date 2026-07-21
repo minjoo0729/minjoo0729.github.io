@@ -1,0 +1,54 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import PublicationEntry from "../components/PublicationEntry.astro";
+import { parseBibtex, groupByYear } from "../lib/bib";
+// Parsed at build time; no server/runtime dependency on a bibtex library.
+import bibRaw from "../content/publications/papers.bib?raw";
+
+const grouped = groupByYear(parseBibtex(bibRaw));
+---
+
+<BaseLayout title="Publications">
+  <div class="publications">
+    <h1>Publications</h1>
+
+    <input type="text" id="bib-search" class="bib-search" placeholder="Type to filter" autocomplete="off" spellcheck="false" />
+
+    {
+      grouped.map(({ year, entries }) => (
+        <section>
+          <h2 class="year-heading">{year}</h2>
+          <ul class="bibliography">
+            {entries.map((entry) => (
+              <PublicationEntry entry={entry} />
+            ))}
+          </ul>
+        </section>
+      ))
+    }
+  </div>
+</BaseLayout>
+
+<script>
+  const searchInput = document.getElementById("bib-search") as HTMLInputElement | null;
+  const entries = Array.from(document.querySelectorAll<HTMLLIElement>(".bib-entry"));
+
+  searchInput?.addEventListener("input", () => {
+    const query = searchInput.value.trim().toLowerCase();
+    for (const entry of entries) {
+      const haystack = entry.dataset.search ?? "";
+      entry.style.display = !query || haystack.includes(query) ? "" : "none";
+    }
+    for (const section of document.querySelectorAll<HTMLElement>(".publications section")) {
+      const visible = Array.from(section.querySelectorAll<HTMLElement>(".bib-entry")).some((el) => el.style.display !== "none");
+      section.style.display = visible ? "" : "none";
+    }
+  });
+
+  document.addEventListener("click", (event) => {
+    const target = event.target as HTMLElement;
+    if (!target.classList.contains("abstract-toggle")) return;
+    const abstract = target.nextElementSibling as HTMLElement | null;
+    abstract?.classList.toggle("open");
+  });
+</script>

@@ -1,0 +1,58 @@
+---
+import type { BibEntry } from "../lib/bib";
+
+interface Props {
+  entry: BibEntry;
+}
+
+const { entry } = Astro.props;
+const authorLine = entry.authors.join(", ");
+const searchBlob = [entry.title, authorLine, entry.venue, entry.year, entry.abbr].filter(Boolean).join(" ").toLowerCase();
+
+const links: { label: string; href: string }[] = [];
+if (entry.pdf) links.push({ label: "PDF", href: entry.pdf.startsWith("http") ? entry.pdf : `/pdf/${entry.pdf}` });
+if (entry.html) links.push({ label: "HTML", href: entry.html });
+if (entry.doi) links.push({ label: "DOI", href: `https://doi.org/${entry.doi}` });
+if (entry.code) links.push({ label: "Code", href: entry.code });
+if (entry.website) links.push({ label: "Website", href: entry.website });
+if (entry.video) links.push({ label: "Video", href: entry.video });
+if (entry.poster) links.push({ label: "Poster", href: entry.poster });
+if (entry.slides) links.push({ label: "Slides", href: entry.slides });
+if (entry.url && !entry.doi) links.push({ label: "Link", href: entry.url });
+---
+
+<li class="bib-entry" data-search={searchBlob}>
+  {entry.preview && <img class="bib-preview" src={`/img/${entry.preview}`} alt="" loading="lazy" />}
+  <div>
+    {entry.abbr && <span class="abbr">{entry.abbr}</span>}
+    <p class="title">
+      {entry.title}
+      {entry.award && <span class="award">{entry.awardName || "Award"}</span>}
+    </p>
+    {authorLine && <p class="author">{authorLine}</p>}
+    {entry.venue && (
+      <p class="venue">
+        {entry.venue}
+        {entry.volume ? `, vol. ${entry.volume}` : ""}
+        {entry.pages ? `, pp. ${entry.pages}` : ""} ({entry.year})
+      </p>
+    )}
+    {links.length > 0 && (
+      <div class="links">
+        {links.map((link) => (
+          <a href={link.href} target="_blank" rel="noopener noreferrer">
+            {link.label}
+          </a>
+        ))}
+      </div>
+    )}
+    {entry.abstract && (
+      <>
+        <button type="button" class="abstract-toggle">
+          Abstract ▾
+        </button>
+        <div class="abstract">{entry.abstract}</div>
+      </>
+    )}
+  </div>
+</li>

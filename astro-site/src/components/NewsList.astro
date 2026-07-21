@@ -1,0 +1,41 @@
+---
+import { getCollection, render } from "astro:content";
+
+interface Props {
+  limit?: number;
+  scrollable?: boolean;
+}
+
+const { limit, scrollable = false } = Astro.props;
+
+let items = (await getCollection("news")).sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+if (limit) items = items.slice(0, limit);
+
+const rendered = await Promise.all(
+  items.map(async (item) => ({
+    item,
+    Content: (await render(item)).Content,
+  }))
+);
+---
+
+<div class:list={["news", { "news-scrollable": scrollable }]}>
+  {
+    rendered.length === 0 ? (
+      <p>No news so far...</p>
+    ) : (
+      <table>
+        <tbody>
+          {rendered.map(({ item, Content }) => (
+            <tr>
+              <td class="news-date">{item.data.date.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}</td>
+              <td>
+                <Content />
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    )
+  }
+</div>

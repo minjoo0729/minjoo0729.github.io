@@ -1,0 +1,30 @@
+---
+import type { CollectionEntry } from "astro:content";
+
+interface Props {
+  project: CollectionEntry<"projects">;
+}
+
+const { project } = Astro.props;
+const { title, description, img, github, github_stars, redirect } = project.data;
+const href = redirect || `/projects/${project.id}/`;
+---
+
+<a href={href} class="project-card-link">
+  <div class="card hoverable project-card">
+    {img && <img src={img} alt={title} loading="lazy" />}
+    <div class="card-body">
+      <h2>{title}</h2>
+      <p>{description}</p>
+      {
+        github && (
+          <div class="project-card-footer">
+            <a href={github} target="_blank" rel="noopener noreferrer" aria-label="GitHub repository">
+              GitHub{github_stars ? ` ★ ${github_stars}` : ""}
+            </a>
+          </div>
+        )
+      }
+    </div>
+  </div>
+</a>

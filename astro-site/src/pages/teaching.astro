@@ -1,0 +1,29 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
+
+const teaching = (await getCollection("teaching")).sort((a, b) => b.data.semester.localeCompare(a.data.semester));
+---
+
+<BaseLayout title="Teaching" description="Teaching assistant (TA) experience.">
+  <h1>Teaching</h1>
+  <p>Teaching assistant (TA) experience.</p>
+
+  <ul class="teaching-list">
+    {
+      teaching.map(({ data }) => (
+        <li class="teaching-entry">
+          <div class="teaching-semester">{data.semester}</div>
+          <div>
+            <h3 class="teaching-course">{data.course}</h3>
+            <p class="teaching-meta">
+              <strong>{data.role}</strong>
+              {data.professor && <> · Instructor: {data.professor}</>}
+            </p>
+            {data.description && <p class="teaching-description">{data.description}</p>}
+          </div>
+        </li>
+      ))
+    }
+  </ul>
+</BaseLayout>

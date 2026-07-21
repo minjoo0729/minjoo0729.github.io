@@ -1,0 +1,59 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import cvData from "../data/cv.json";
+import socials from "../data/socials.json";
+
+type CvItem = Record<string, any>;
+
+function itemTitle(item: CvItem): string {
+  return item.institution || item.company || item.title || item.name || "";
+}
+
+function itemSubtitle(item: CvItem): string {
+  return item.position || item.studyType || item.awarder || item.publisher || item.issuer || item.level || "";
+}
+
+function itemDate(item: CvItem): string {
+  if (item.startDate || item.endDate) return `${item.startDate ?? ""} – ${item.endDate ?? "present"}`;
+  return item.date || item.releaseDate || "";
+}
+
+function itemDescription(item: CvItem): string {
+  return item.summary || item.reference || "";
+}
+
+const sections = Object.entries(cvData.sections) as [string, CvItem[]][];
+---
+
+<BaseLayout title="CV" description={`CV of ${cvData.name}`}>
+  <h1>CV</h1>
+
+  <a class="cv-download" href={socials.cvPdf} target="_blank" rel="noopener noreferrer">Download PDF</a>
+
+  {
+    sections.map(([sectionName, items]) => (
+      <section class="cv-section">
+        <h2>{sectionName}</h2>
+        {items.map((item) => (
+          <div class="cv-item">
+            <div class="cv-item-header">
+              <span class="cv-item-title">{itemTitle(item)}</span>
+              <span class="cv-item-date">{itemDate(item)}</span>
+            </div>
+            {itemSubtitle(item) && <p class="cv-item-subtitle">{itemSubtitle(item)}</p>}
+            {item.location && <p class="cv-item-subtitle">{item.location}</p>}
+            {itemDescription(item) && <p>{itemDescription(item)}</p>}
+            {item.keywords && <p class="cv-item-subtitle">{item.keywords}</p>}
+            {Array.isArray(item.highlights) && item.highlights.length > 0 && (
+              <ul>
+                {item.highlights.map((h: string) => (
+                  <li>{h}</li>
+                ))}
+              </ul>
+            )}
+          </div>
+        ))}
+      </section>
+    ))
+  }
+</BaseLayout>
