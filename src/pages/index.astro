@@ -31,9 +31,12 @@ import profilePic from "../assets/images/prof_pic.jpg";
 
       <div class="clearfix">
         <p>
-          I am a first-year M.S. student in School of Computing at KAIST, Republic of Korea, advised by 
+          I am a first-year M.S. student in School of Computing at KAIST, Republic of Korea, advised by
+          &nbsp;
           <a href="https://sites.google.com/view/yjkwon/home" target="_blank" rel="noopener noreferrer">Prof. Youngjin Kwon</a>
-           of the 
+          &nbsp;
+          of the
+          &nbsp; 
           <a href="https://casyslab.kaist.ac.kr/" target="_blank" rel="noopener noreferrer">Computer Architecture and Systems Lab (CASYS)</a>. Previously, I
           received my Bachelor's degree in February, 2026 from KAIST.
         </p>
@@ -62,6 +65,8 @@ import profilePic from "../assets/images/prof_pic.jpg";
         </ul>
       </div>
 
+      <hr class="section-divider" />
+
       <h2><a href="/news/">News</a></h2>
       <NewsList limit={5} scrollable={true} />
     </article>
@@ -77,5 +82,12 @@ import profilePic from "../assets/images/prof_pic.jpg";
   .clearfix a:hover,
   h2 a:hover {
     color: var(--global-hover-color);
+  }
+
+  .section-divider {
+    border: 0;
+    height: 2px;
+    background: #004191;
+    width: 50%;
   }
 </style>
