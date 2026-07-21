@@ -1,34 +1,32 @@
 {
-  "name": "Albert Einstein",
+  "name": "Minjoo Kim",
   "label": "Scientist",
-  "email": "einstein@example.com",
-  "location": "Princeton, NJ",
-  "summary": "A German-born theoretical physicist, widely ranked among the greatest and most influential scientists of all time",
+  "email": "mjkim@casys.kaist.ac.kr",
+  "location": "Daejeon, Republic of Korea",
+  "summary": "A First-Year M.S. Student",
   "socialNetworks": [
-    { "network": "X", "username": "AlbertEinstein" },
-    { "network": "GitHub", "username": "example" },
-    { "network": "LinkedIn", "username": "example" }
+    { "network": "GitHub", "username": "minjoo0729" }
   ],
   "sections": {
     "Education": [
       {
-        "institution": "University of Zurich",
-        "location": "Zurich, Switzerland",
+        "institution": "KAIST (Korea Advanced Institute of Science and Technology)",
+        "location": "Daejeon, Republic of Korea",
         "url": "https://www.uzh.ch/",
-        "area": "Physics",
-        "studyType": "PhD",
-        "startDate": "1900",
-        "endDate": "1905",
-        "courses": "Theory of Relativity",
+        "area": "Computer Science",
+        "studyType": "Bachelor's Degree",
+        "startDate": "2021/03",
+        "endDate": "2026/02",
+        "courses": "School of Computing",
         "highlights": ["Description 1.", "Description 2."]
       },
       {
-        "institution": "Eidgenössische Technische Hochschule",
-        "location": "Zurich, Switzerland",
-        "area": "Physics",
-        "studyType": "Federal teaching diploma",
-        "startDate": "1896",
-        "endDate": "1900",
+        "institution": "Univeristy of Texas at Austin",
+        "location": "Austin, Texas, United States of America",
+        "area": "Electrical and Computer Engineering",
+        "studyType": "Exchange Student",
+        "startDate": "2024/08",
+        "endDate": "2024/12",
         "highlights": ["Description 1.", "Description 2."]
       }
     ],
@@ -49,41 +47,6 @@
         "startDate": "1933",
         "endDate": "1933",
         "highlights": ["Description 1.", "Description 2."]
-      },
-      {
-        "company": "Kaiser Wilhelm Institute for Physics",
-        "position": "Director",
-        "location": "Berlin, Germany",
-        "startDate": "1917",
-        "endDate": "1933"
-      },
-      {
-        "company": "Karl-Ferdinand University",
-        "position": "Professor of Theoretical Physics",
-        "location": "Prague, Czechoslovakia",
-        "startDate": "1911",
-        "endDate": "1917"
-      },
-      {
-        "company": "University of Zurich",
-        "position": "Associate Professor of Theoretical Physics",
-        "location": "Zurich, Switzerland",
-        "startDate": "1909",
-        "endDate": "1911"
-      }
-    ],
-    "Volunteer": [
-      {
-        "company": "People's Climate March",
-        "position": "Lead Organizer",
-        "location": "Zurich, Switzerland",
-        "startDate": "2014-04-01",
-        "endDate": "2015-07-01",
-        "summary": "Lead organizer for the New York City branch of the People's Climate March, the largest climate march in history.",
-        "highlights": [
-          "Awarded 'Climate Hero' award by Greenpeace for my efforts organizing the march.",
-          "Men of the year 2014 by Time magazine"
-        ]
       }
     ],
     "Awards": [
@@ -138,7 +101,7 @@
       }
     ],
     "Languages": [
-      { "name": "German", "summary": "Native speaker" },
+      { "name": "Korean", "summary": "Native speaker" },
       { "name": "English", "summary": "Fluent" }
     ],
     "Interests": [
@@ -164,13 +127,8 @@
     ],
     "References": [
       {
-        "name": "Professor John Doe",
+        "name": "Professor Youngjin Kwon",
         "icon": "fa-solid fa-laptop",
-        "reference": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam condimentum, diam quis convallis euismod, arcu mi ullamcorper lorem, a vestibulum nunc magna at sem. Sed in risus ac felis varius blandit."
-      },
-      {
-        "name": "Professor Jane Smith",
-        "icon": "fa-solid fa-thumbtack",
         "reference": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam condimentum, diam quis convallis euismod, arcu mi ullamcorper lorem, a vestibulum nunc magna at sem. Sed in risus ac felis varius blandit."
       }
     ]

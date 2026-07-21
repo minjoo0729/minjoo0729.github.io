@@ -7,7 +7,7 @@ const projects = (await getCollection("projects")).sort((a, b) => a.data.importa
 ---
 
 <BaseLayout title="Projects" description="A growing collection of cool projects.">
-  <h1>Projects</h1>
+  <h1 class="page-title">Projects</h1>
 
   <div class="projects-grid">
     {projects.map((project) => <ProjectCard project={project} />)}

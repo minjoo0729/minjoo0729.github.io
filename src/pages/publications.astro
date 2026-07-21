@@ -10,21 +10,27 @@ const grouped = groupByYear(parseBibtex(bibRaw));
 
 <BaseLayout title="Publications">
   <div class="publications">
-    <h1>Publications</h1>
-
-    <input type="text" id="bib-search" class="bib-search" placeholder="Type to filter" autocomplete="off" spellcheck="false" />
+    <h1 class="page-title">Publications</h1>
 
     {
-      grouped.map(({ year, entries }) => (
-        <section>
-          <h2 class="year-heading">{year}</h2>
-          <ul class="bibliography">
-            {entries.map((entry) => (
-              <PublicationEntry entry={entry} />
-            ))}
-          </ul>
-        </section>
-      ))
+      grouped.length === 0 ? (
+        <p class="empty-state">No publications yet — will be updated soon.</p>
+      ) : (
+        <>
+          <input type="text" id="bib-search" class="bib-search" placeholder="Type to filter" autocomplete="off" spellcheck="false" />
+
+          {grouped.map(({ year, entries }) => (
+            <section>
+              <h2 class="year-heading">{year}</h2>
+              <ul class="bibliography">
+                {entries.map((entry) => (
+                  <PublicationEntry entry={entry} />
+                ))}
+              </ul>
+            </section>
+          ))}
+        </>
+      )
     }
   </div>
 </BaseLayout>
