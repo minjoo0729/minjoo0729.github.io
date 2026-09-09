@@ -18,7 +18,7 @@ const teaching = (await getCollection("teaching")).sort((a, b) => b.data.semeste
             <h3 class="teaching-course">{data.course}</h3>
             <p class="teaching-meta">
               <strong>{data.role}</strong>
-              {data.professor && <> · Instructor: {data.professor}</>}
+              {data.professor && <> · {data.professor}</>}
             </p>
             {data.description && <p class="teaching-description">{data.description}</p>}
           </div>

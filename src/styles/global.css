@@ -633,7 +633,7 @@ img {
 }
 
 .cv-section h2 {
-  border-bottom: 1px solid var(--global-divider-color);
+  /* border-bottom: 1px solid var(--global-divider-color); */
   padding-bottom: 0.4rem;
 }
 
