@@ -5,9 +5,9 @@ import { getCollection } from "astro:content";
 const teaching = (await getCollection("teaching")).sort((a, b) => b.data.semester.localeCompare(a.data.semester));
 ---
 
-<BaseLayout title="Teaching" description="Teaching assistant (TA) experience.">
+<BaseLayout title="Teaching" description="Teaching assistant (TA)">
   <h1 class="page-title">Teaching</h1>
-  <p>Teaching assistant (TA) experience.</p>
+  <h3>Teaching assistant (TA)</h3>
 
   <ul class="teaching-list">
     {
